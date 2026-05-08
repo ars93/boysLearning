@@ -25,3 +25,11 @@ def ping() -> dict:
         "message": "Hello from FastAPI backend!",
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
+
+@app.post("/formSubmit")
+def form_submit(data: dict) -> dict:
+    return {
+        "message": "Form submitted successfully!",
+        "data": data,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }

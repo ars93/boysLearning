@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import Form from './Form';
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 export default function App() {
   const [result, setResult] = useState('Click the button to call backend');
+
   const [loading, setLoading] = useState(false);
 
   const callBackend = async () => {
@@ -38,6 +40,13 @@ export default function App() {
         </button>
 
         <pre>{result}</pre>
+      </section>
+      {/* below is the new component for the form example */}
+      <section className="card">
+        <p className="tag">Form Example</p>
+        <h1>Simple Form</h1>
+        <p className="desc">A simple form component example.</p>
+        <Form />
       </section>
     </main>
   );
